@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <form class="form-card" autocomplete="on">
+      <h1>Sign Up</h1>
+
+      <!-- Basic info -->
+      <fieldset>
+        <legend><span class="dot" aria-hidden="true"></span> Your basic info</legend>
+
+        <div class="field">
+          <label for="firstName">First Name:</label>
+          <input id="firstName" name="firstName" type="text" required autocomplete="given-name" />
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last Name:</label>
+          <input id="lastName" name="lastName" type="text" required autocomplete="family-name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" required autocomplete="username" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            minlength="8"
+            pattern="(?=.*[A-Za-z])(?=.*\\d).{8,}"
+            autocomplete="new-password"
+          />
+          <p class="hint">At least 8 characters with one letter and one number.</p>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm Password</label>
+          <input id="confirm" name="confirm" type="password" required autocomplete="new-password" />
+        </div>
+      </fieldset>
+
+      <!-- Other details -->
+      <fieldset>
+        <legend><span class="dot" aria-hidden="true"></span> Other details</legend>
+
+        <div class="field">
+          <label for="dob">Birth Date:</label>
+          <input id="dob" name="dob" type="date" required />
+        </div>
+
+        <div class="field">
+          <span class="label">Gender:</span>
+          <div class="radio-group" role="radiogroup" aria-label="Gender">
+            <label><input type="radio" name="gender" value="male" required /> Male</label>
+            <label><input type="radio" name="gender" value="female" /> Female</label>
+            <label><input type="radio" name="gender" value="other" /> Other</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="about">About Me:</label>
+          <textarea id="about" name="about" rows="4" placeholder="Tell us a little about yourself…"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="profession">Choose Your Profession</label>
+          <select id="profession" name="profession" required>
+            <option value="" disabled selected>— Please choose —</option>
+            <option>Web Development</option>
+            <option>Data Analytics</option>
+            <option>UI/UX Design</option>
+            <option>Mobile Development</option>
+            <option>Cybersecurity</option>
+            <option>Cloud/DevOps</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="field checkbox">
+        <label>
+          <input type="checkbox" required />
+          I'm accepting Terms and Conditions
+        </label>
+      </div>
+
+      <button type="submit" class="submit">Sign Up</button>
+    </form>
+  </main>
+</body>
+</html>
